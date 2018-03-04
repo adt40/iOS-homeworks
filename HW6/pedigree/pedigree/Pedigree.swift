@@ -26,7 +26,7 @@ class Pedigree {
     func removePerson(individualID : Int) {
         for person in family {
             if person.individual == individualID {
-                family.remove(person)
+                family.remove(at: person.individual)
                 break
             }
         }
@@ -39,33 +39,5 @@ class Pedigree {
             }
         }
         return nil
-    }
-    
-    func getAllOfID(idType : IDType) -> [Int] {
-        var idArr : [Int] = []
-        for person in family {
-            idArr.append(person.getID(idType: idType))
-        }
-        return idArr
-    }
-    
-    func getChildrenIDs(individualID : Int) -> [Int] {
-        var idArr : [Int] = []
-        for person in family {
-            if person.father == individualID || person.mother == individualID {
-                idArr.append(person.individual)
-            }
-        }
-        return idArr
-    }
-    
-    func getLastGenerationID() -> [Int] {
-        var idArr : [Int] = []
-        for person in family {
-            if getChildrenIDs(individualID: person.individual).count == 0 {
-                idArr.append(person.individual)
-            }
-        }
-        return idArr
     }
 }

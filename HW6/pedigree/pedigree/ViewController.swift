@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let drawSize = 50
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -31,34 +33,41 @@ class ViewController: UIViewController {
         
         let pedigree = Pedigree(people: personArr)
         
+        let pedigreeView = PedigreeView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
+        self.view.addSubview(pedigreeView)
+        
+        
+        let panGestureRec = UIPanGestureRecognizer(target: self, action: #selector(ViewController.pan(recognizer:)))
+
+        
+        pedigreeView.addGestureRecognizer(panGestureRec)
+        
+    }
+    
+    @objc func pan(recognizer: UIPanGestureRecognizer){
+        switch recognizer.state{
+        case .changed, .ended:
+            let translate = recognizer.translation(in: view)
+            //specialView.center.x += translate.x
+            //specialView.center.y += translate.y
+            
+            //specialView.center = specialView.center.applying(CGAffineTransform(a: 1, b: 0, c: 0, d: 1, tx: translate.x, ty: translate.y))
+            self.view.center = self.view.center.applying(CGAffineTransform(a: 1, b: 0, c: 0, d: 1, tx: translate.x, ty: translate.y))
+            recognizer.setTranslation(CGPoint(x:0, y:0), in: view)
+            
+        default:
+            break
+            
+        }
         
         
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    func drawSquare(gridLocation : GridLocation, isAffected : Bool) {
-        
-    }
-    func drawCircle(gridLocation : GridLocation, isAffected : Bool) {
-        
-    }
-    func drawT(gridLocation : GridLocation) {
-        
-    }
-    func drawInvertedT(gridLocation : GridLocation) {
-        
-    }
-    func drawLeftDown(gridLocation : GridLocation) {
-        
-    }
-    func drawRightDown(gridLocation : GridLocation) {
-        
-    }
-    
-    
 }
 

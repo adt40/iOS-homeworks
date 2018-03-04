@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0190C8A7204C496F001AE736 /* PedigreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190C8A6204C496F001AE736 /* PedigreeView.swift */; };
 		827C13C3204795D10051B8AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827C13C2204795D10051B8AF /* AppDelegate.swift */; };
 		827C13C5204795D10051B8AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827C13C4204795D10051B8AF /* ViewController.swift */; };
 		827C13C8204795D10051B8AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 827C13C6204795D10051B8AF /* Main.storyboard */; };
@@ -15,13 +16,10 @@
 		827C13D5204795FB0051B8AF /* Pedigree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827C13D4204795FB0051B8AF /* Pedigree.swift */; };
 		827C13D7204796340051B8AF /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827C13D6204796340051B8AF /* Person.swift */; };
 		827C13D9204798F20051B8AF /* IDType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827C13D8204798F20051B8AF /* IDType.swift */; };
-		827C13DB20479DBC0051B8AF /* GridLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827C13DA20479DBC0051B8AF /* GridLocation.swift */; };
-		827C13DD20479E460051B8AF /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827C13DC20479E460051B8AF /* Grid.swift */; };
-		827C13DF20479E830051B8AF /* Coord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827C13DE20479E830051B8AF /* Coord.swift */; };
-		827C13E120479EEB0051B8AF /* GridObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827C13E020479EEB0051B8AF /* GridObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0190C8A6204C496F001AE736 /* PedigreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedigreeView.swift; sourceTree = "<group>"; };
 		827C13BF204795D10051B8AF /* pedigree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pedigree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		827C13C2204795D10051B8AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		827C13C4204795D10051B8AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -32,10 +30,6 @@
 		827C13D4204795FB0051B8AF /* Pedigree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedigree.swift; sourceTree = "<group>"; };
 		827C13D6204796340051B8AF /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		827C13D8204798F20051B8AF /* IDType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDType.swift; sourceTree = "<group>"; };
-		827C13DA20479DBC0051B8AF /* GridLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLocation.swift; sourceTree = "<group>"; };
-		827C13DC20479E460051B8AF /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
-		827C13DE20479E830051B8AF /* Coord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coord.swift; sourceTree = "<group>"; };
-		827C13E020479EEB0051B8AF /* GridObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,10 +67,7 @@
 				827C13D6204796340051B8AF /* Person.swift */,
 				827C13C2204795D10051B8AF /* AppDelegate.swift */,
 				827C13C4204795D10051B8AF /* ViewController.swift */,
-				827C13DC20479E460051B8AF /* Grid.swift */,
-				827C13DA20479DBC0051B8AF /* GridLocation.swift */,
-				827C13E020479EEB0051B8AF /* GridObject.swift */,
-				827C13DE20479E830051B8AF /* Coord.swift */,
+				0190C8A6204C496F001AE736 /* PedigreeView.swift */,
 				827C13C6204795D10051B8AF /* Main.storyboard */,
 				827C13C9204795D10051B8AF /* Assets.xcassets */,
 				827C13CB204795D10051B8AF /* LaunchScreen.storyboard */,
@@ -158,13 +149,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				827C13D5204795FB0051B8AF /* Pedigree.swift in Sources */,
+				0190C8A7204C496F001AE736 /* PedigreeView.swift in Sources */,
 				827C13D9204798F20051B8AF /* IDType.swift in Sources */,
-				827C13DB20479DBC0051B8AF /* GridLocation.swift in Sources */,
 				827C13C5204795D10051B8AF /* ViewController.swift in Sources */,
-				827C13E120479EEB0051B8AF /* GridObject.swift in Sources */,
 				827C13D7204796340051B8AF /* Person.swift in Sources */,
-				827C13DF20479E830051B8AF /* Coord.swift in Sources */,
-				827C13DD20479E460051B8AF /* Grid.swift in Sources */,
 				827C13C3204795D10051B8AF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
