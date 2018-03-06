@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     let drawSize = 50
+    var pedigreeView : PedigreeView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,14 +34,14 @@ class ViewController: UIViewController {
         
         let pedigree = Pedigree(people: personArr)
         
-        let pedigreeView = PedigreeView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
+        pedigreeView = PedigreeView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
         self.view.addSubview(pedigreeView)
         
         
         let panGestureRec = UIPanGestureRecognizer(target: self, action: #selector(ViewController.pan(recognizer:)))
-
-        
+        let zoomGenstureRec = UIPinchGestureRecognizer(target: self, action: #selector(ViewController.zoom(recognizer:)))
         pedigreeView.addGestureRecognizer(panGestureRec)
+        pedigreeView.addGestureRecognizer(zoomGenstureRec)
         
     }
     
@@ -48,21 +49,25 @@ class ViewController: UIViewController {
         switch recognizer.state{
         case .changed, .ended:
             let translate = recognizer.translation(in: view)
-            //specialView.center.x += translate.x
-            //specialView.center.y += translate.y
-            
-            //specialView.center = specialView.center.applying(CGAffineTransform(a: 1, b: 0, c: 0, d: 1, tx: translate.x, ty: translate.y))
-            self.view.center = self.view.center.applying(CGAffineTransform(a: 1, b: 0, c: 0, d: 1, tx: translate.x, ty: translate.y))
+            pedigreeView.center = pedigreeView.center.applying(CGAffineTransform(a: 1, b: 0, c: 0, d: 1, tx: translate.x, ty: translate.y))
             recognizer.setTranslation(CGPoint(x:0, y:0), in: view)
             
         default:
             break
             
         }
-        
-        
     }
     
+    @objc func zoom(recognizer: UIPinchGestureRecognizer) {
+        switch recognizer.state {
+        case .changed, .ended:
+            let scale = recognizer.scale
+            pedigreeView.bounds = pedigreeView.bounds.applying(CGAffineTransform(a: scale, b: 0, c: 0, d: scale, tx: 0, ty: 0))
+            recognizer.scale = 1
+        default :
+            break
+        }
+    }
     
 
     override func didReceiveMemoryWarning() {
