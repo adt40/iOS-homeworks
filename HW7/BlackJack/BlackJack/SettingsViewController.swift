@@ -27,28 +27,4 @@ class SettingsViewController: UIViewController {
             thresholdTextField.text = String(t)
         }
     }
-
-    @IBAction func donePressed(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "unwindToGame", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let id = segue.identifier {
-            switch id {
-            case "Done":
-                let dvc = segue.destination as! BJViewController
-                if let numDecksString = numDecksTextField.text {
-                    if let numDecks = Int(numDecksString) {
-                        dvc.numDecks = numDecks
-                    }
-                }
-                if let thresholdString = thresholdTextField.text {
-                    if let threshold = Int(thresholdString) {
-                        dvc.threshold = threshold as Int
-                    }
-                }
-            default: break
-            }
-        }
-    }
 }

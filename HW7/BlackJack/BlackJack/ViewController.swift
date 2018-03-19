@@ -204,7 +204,7 @@ class BJViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let id = segue.identifier {
-            switch id {
+            switch (id) {
             case "Settings":
                 let dvc = segue.destination as! SettingsViewController
                 dvc.numDecks = numDecks
@@ -215,7 +215,18 @@ class BJViewController: UIViewController {
     }
     
     @IBAction func customUnwind( _ unwindSegue: UIStoryboardSegue) {
-        if unwindSegue.source is SettingsViewController {
+        if let source = unwindSegue.source as? SettingsViewController {
+            if let numDecksString = source.numDecksTextField.text {
+                if let nd = Int(numDecksString) {
+                    numDecks = nd
+                }
+            }
+            if let thresholdString = source.thresholdTextField.text {
+                if let t = Int(thresholdString) {
+                    threshold = t
+                }
+            }
+            
             restartGame(numDecks: numDecks, threshold: threshold)
         }
     }

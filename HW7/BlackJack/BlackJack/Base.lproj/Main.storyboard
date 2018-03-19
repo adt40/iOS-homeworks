@@ -185,14 +185,13 @@
                     <navigationItem key="navigationItem" title="Settings" id="kTR-RA-HgC">
                         <barButtonItem key="rightBarButtonItem" title="Done" id="A6f-r1-IPd">
                             <connections>
-                                <action selector="donePressed:" destination="0Gf-cP-zuj" id="W4s-Cm-MMa"/>
+                                <segue destination="mOg-zv-6HL" kind="unwind" unwindAction="customUnwind:" id="hrf-GC-Jkr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="numDecksTextField" destination="kIg-kF-ye0" id="g0A-je-bwA"/>
                         <outlet property="thresholdTextField" destination="ct4-Ug-T1H" id="bSU-WY-eCn"/>
-                        <segue destination="mOg-zv-6HL" kind="unwind" identifier="unwindToGame" unwindAction="customUnwind:" id="ut7-OD-X2W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDk-5E-nsb" userLabel="First Responder" sceneMemberID="firstResponder"/>
