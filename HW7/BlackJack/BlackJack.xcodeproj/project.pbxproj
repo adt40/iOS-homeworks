@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		826918E520601FB9009490D6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826918E420601FB9009490D6 /* SettingsViewController.swift */; };
 		9F0C759B202DFF1000C10606 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0C759A202DFF1000C10606 /* AppDelegate.swift */; };
 		9F0C759D202DFF1000C10606 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0C759C202DFF1000C10606 /* ViewController.swift */; };
 		9F0C75A0202DFF1000C10606 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F0C759E202DFF1000C10606 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		826918E420601FB9009490D6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9F0C7597202DFF1000C10606 /* BlackJack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackJack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F0C759A202DFF1000C10606 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F0C759C202DFF1000C10606 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				9F0C75A1202DFF1000C10606 /* Assets.xcassets */,
 				9F0C75A3202DFF1000C10606 /* LaunchScreen.storyboard */,
 				9F0C75A6202DFF1000C10606 /* Info.plist */,
+				826918E420601FB9009490D6 /* SettingsViewController.swift */,
 			);
 			path = BlackJack;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 				9F0C759D202DFF1000C10606 /* ViewController.swift in Sources */,
 				9F0C759B202DFF1000C10606 /* AppDelegate.swift in Sources */,
 				9F0C75AD202E02D400C10606 /* BJModel.swift in Sources */,
+				826918E520601FB9009490D6 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

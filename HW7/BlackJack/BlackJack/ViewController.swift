@@ -10,17 +10,14 @@ import UIKit
 
 class BJViewController: UIViewController {
     @IBOutlet var dealersCards: [UIImageView]!
-    
     @IBOutlet var playersCards: [UIImageView]!
     
     private var gameModel: BJGameModel
+    var numDecks = 1
+    var threshold = 0
     
     @IBOutlet weak var hitButton: UIButton!
-    
     @IBOutlet weak var standButton: UIButton!
-    
-    @IBOutlet weak var numDecksTextField: UITextField!
-    @IBOutlet weak var thresholdTextField: UITextField!
     @IBOutlet weak var remainingCardsTextField: UITextField!
     @IBOutlet weak var startGameButton: UIButton!
     
@@ -40,11 +37,8 @@ class BJViewController: UIViewController {
                 let alertAction = UIAlertAction(title: "Play again", style: .default, handler:({(_: UIAlertAction) -> Void  in self.restartGameSameDeck()}))
                 alert.addAction(alertAction)
                 present(alert, animated: true, completion: nil)
-                
             }
-            
         }
-        
     }
     
     func restartGame(numDecks: Int, threshold: Int){
@@ -173,13 +167,7 @@ class BJViewController: UIViewController {
     }
     
     @IBAction func userClickStart(_ sender: UIButton) {
-        if let numDecks = Int(numDecksTextField.text!) {
-            if let threshold = Int(thresholdTextField.text!) {
-                hitButton.isEnabled = true
-                standButton.isEnabled = true
-                restartGame(numDecks: numDecks, threshold: threshold)
-            }
-        }
+        restartGameSameDeck()
     }
     
     func playDealerTurn(){
@@ -211,6 +199,24 @@ class BJViewController: UIViewController {
             //showDealerNextCard()
             let aSelector : Selector = #selector(BJViewController.showDealerNextCard)
             perform(aSelector, with: nil, afterDelay: 0.5)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let id = segue.identifier {
+            switch id {
+            case "Settings":
+                let dvc = segue.destination as! SettingsViewController
+                dvc.numDecks = numDecks
+                dvc.threshold = threshold
+            default: break
+            }
+        }
+    }
+    
+    @IBAction func customUnwind( _ unwindSegue: UIStoryboardSegue) {
+        if unwindSegue.source is SettingsViewController {
+            restartGame(numDecks: numDecks, threshold: threshold)
         }
     }
 }
