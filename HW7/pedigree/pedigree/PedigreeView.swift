@@ -16,21 +16,23 @@ extension CGRect{
 
 class PedigreeView: UIView {
     
+    var pedigree : Pedigree!
+    
     private let drawSize = 80
     private let startx = 50
     private let starty = 50
     
     override func draw(_ rect: CGRect) {
         initScreen()
-        drawSquare(   x: startx + drawSize * 0, y: starty + drawSize * 0, affected: true)
+        drawSquare(   x: startx + drawSize * 0, y: starty + drawSize * 0, affected: Bool(truncating: pedigree.getPerson(individualID: 1)!.affected as NSNumber))
         drawConnector(x: startx + drawSize * 1, y: starty + drawSize * 0, down: true)
-        drawCircle(   x: startx + drawSize * 2, y: starty + drawSize * 0, affected: false)
-        drawCircle(   x: startx + drawSize * 1, y: starty + drawSize * 1, affected: true)
+        drawCircle(   x: startx + drawSize * 2, y: starty + drawSize * 0, affected: Bool(truncating: pedigree.getPerson(individualID: 2)!.affected as NSNumber))
+        drawCircle(   x: startx + drawSize * 1, y: starty + drawSize * 1, affected: Bool(truncating: pedigree.getPerson(individualID: 3)!.affected as NSNumber))
         drawConnector(x: startx + drawSize * 2, y: starty + drawSize * 1, down: true)
-        drawSquare(   x: startx + drawSize * 3, y: starty + drawSize * 1, affected: false)
+        drawSquare(   x: startx + drawSize * 3, y: starty + drawSize * 1, affected: Bool(truncating: pedigree.getPerson(individualID: 4)!.affected as NSNumber))
         drawTwoPersonConnector(x: startx + drawSize * 1, y: starty + drawSize * 2)
-        drawCircle(   x: startx + drawSize * 1, y: starty + drawSize * 3, affected: true)
-        drawSquare(   x: startx + drawSize * 3, y: starty + drawSize * 3, affected: false)
+        drawCircle(   x: startx + drawSize * 1, y: starty + drawSize * 3, affected: Bool(truncating: pedigree.getPerson(individualID: 5)!.affected as NSNumber))
+        drawSquare(   x: startx + drawSize * 3, y: starty + drawSize * 3, affected: Bool(truncating: pedigree.getPerson(individualID: 6)!.affected as NSNumber))
     }
     
     private func initScreen() {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0190C8A7204C496F001AE736 /* PedigreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190C8A6204C496F001AE736 /* PedigreeView.swift */; };
+		824989D22060834A0057AB2B /* DiseaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824989D12060834A0057AB2B /* DiseaseViewController.swift */; };
 		827C13C3204795D10051B8AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827C13C2204795D10051B8AF /* AppDelegate.swift */; };
 		827C13C5204795D10051B8AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827C13C4204795D10051B8AF /* ViewController.swift */; };
 		827C13C8204795D10051B8AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 827C13C6204795D10051B8AF /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		0190C8A6204C496F001AE736 /* PedigreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedigreeView.swift; sourceTree = "<group>"; };
+		824989D12060834A0057AB2B /* DiseaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseViewController.swift; sourceTree = "<group>"; };
 		827C13BF204795D10051B8AF /* pedigree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pedigree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		827C13C2204795D10051B8AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		827C13C4204795D10051B8AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				827C13D6204796340051B8AF /* Person.swift */,
 				827C13C2204795D10051B8AF /* AppDelegate.swift */,
 				827C13C4204795D10051B8AF /* ViewController.swift */,
+				824989D12060834A0057AB2B /* DiseaseViewController.swift */,
 				0190C8A6204C496F001AE736 /* PedigreeView.swift */,
 				827C13C6204795D10051B8AF /* Main.storyboard */,
 				827C13C9204795D10051B8AF /* Assets.xcassets */,
@@ -151,6 +154,7 @@
 				827C13D5204795FB0051B8AF /* Pedigree.swift in Sources */,
 				0190C8A7204C496F001AE736 /* PedigreeView.swift in Sources */,
 				827C13D9204798F20051B8AF /* IDType.swift in Sources */,
+				824989D22060834A0057AB2B /* DiseaseViewController.swift in Sources */,
 				827C13C5204795D10051B8AF /* ViewController.swift in Sources */,
 				827C13D7204796340051B8AF /* Person.swift in Sources */,
 				827C13C3204795D10051B8AF /* AppDelegate.swift in Sources */,

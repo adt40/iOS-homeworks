@@ -13,6 +13,7 @@ class Pedigree {
     init(people : [Person]) {
         family = people
     }
+
     
     func getPerson(individualID : Int) -> Person? {
         for person in family {

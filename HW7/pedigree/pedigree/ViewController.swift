@@ -12,17 +12,18 @@ class ViewController: UIViewController {
 
     let drawSize = 50
     var pedigreeView : PedigreeView!
+    var pedigree : Pedigree?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let p1 = Person(familyID: 1, individualID: 1, fatherID: 0, motherID: 0, genderID: 1,  affectedStatus: 1)
-        let p2 = Person(familyID: 1, individualID: 2, fatherID: 0, motherID: 0, genderID: 2, affectedStatus: 0)
-        let p3 = Person(familyID: 1, individualID: 3, fatherID: 0, motherID: 0, genderID: 1, affectedStatus: 0)
-        let p4 = Person(familyID: 1, individualID: 4, fatherID: 1, motherID: 2, genderID: 2, affectedStatus: 1)
-        let p5 = Person(familyID: 1, individualID: 5, fatherID: 3, motherID: 4, genderID: 2, affectedStatus: 1)
-        let p6 = Person(familyID: 1, individualID: 6, fatherID: 3, motherID: 4, genderID: 1, affectedStatus: 0)
+        var p1 = Person(familyID: 1, individualID: 1, fatherID: 0, motherID: 0, genderID: 1,  affectedStatus: 1)
+        var p2 = Person(familyID: 1, individualID: 2, fatherID: 0, motherID: 0, genderID: 2, affectedStatus: 0)
+        var p3 = Person(familyID: 1, individualID: 3, fatherID: 0, motherID: 0, genderID: 1, affectedStatus: 0)
+        var p4 = Person(familyID: 1, individualID: 4, fatherID: 1, motherID: 2, genderID: 2, affectedStatus: 1)
+        var p5 = Person(familyID: 1, individualID: 5, fatherID: 3, motherID: 4, genderID: 2, affectedStatus: 1)
+        var p6 = Person(familyID: 1, individualID: 6, fatherID: 3, motherID: 4, genderID: 1, affectedStatus: 0)
         
         var personArr : [Person] = []
         personArr.append(p1)
@@ -32,9 +33,10 @@ class ViewController: UIViewController {
         personArr.append(p5)
         personArr.append(p6)
         
-        let pedigree = Pedigree(people: personArr)
+        pedigree = Pedigree(people: personArr)
         
         pedigreeView = PedigreeView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
+        pedigreeView.pedigree = pedigree
         self.view.addSubview(pedigreeView)
         
         
