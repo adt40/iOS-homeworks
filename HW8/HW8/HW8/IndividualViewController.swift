@@ -10,10 +10,51 @@ import UIKit
 
 class IndividualViewController: UIViewController {
 
+    @IBOutlet weak var firstNameText: UITextField!
+    @IBOutlet weak var lastNameText: UITextField!
+    @IBOutlet weak var motherIDText: UITextField!
+    @IBOutlet weak var fatherIDText: UITextField!
+    @IBOutlet weak var genderSwitch: UISwitch!
+    @IBOutlet weak var affectedSwitch: UISwitch!
+    
+    var firstName : String?
+    var lastName : String?
+    var motherID : Int?
+    var fatherID : Int?
+    var gender : Int?
+    var affected : Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        
+        if let fn = firstName {
+            firstNameText.text = fn
+        }
+        if let ln = lastName {
+            lastNameText.text = ln
+        }
+        if let mid = motherID {
+            motherIDText.text = String(mid)
+        }
+        if let fid = fatherID {
+            fatherIDText.text = String(fid)
+        }
+        if let g = gender {
+            if g == 1 {
+                genderSwitch.isOn = false
+            } else {
+                genderSwitch.isOn = true
+            }
+        }
+        if let a = affected {
+            if a == 0 {
+                affectedSwitch.isOn = false
+            } else {
+                affectedSwitch.isOn = true
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

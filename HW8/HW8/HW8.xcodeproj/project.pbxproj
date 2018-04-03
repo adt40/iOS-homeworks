@@ -19,6 +19,7 @@
 		8204B3432073107D00AFF5BE /* PedigreeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8204B3422073107D00AFF5BE /* PedigreeTableViewController.swift */; };
 		8204B3452073109500AFF5BE /* IndividualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8204B3442073109500AFF5BE /* IndividualViewController.swift */; };
 		8204B3472073134500AFF5BE /* PedigreeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8204B3462073134500AFF5BE /* PedigreeListTableViewCell.swift */; };
+		829736C1207407600026C50F /* PedigreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829736C0207407600026C50F /* PedigreeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		8204B3422073107D00AFF5BE /* PedigreeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedigreeTableViewController.swift; sourceTree = "<group>"; };
 		8204B3442073109500AFF5BE /* IndividualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualViewController.swift; sourceTree = "<group>"; };
 		8204B3462073134500AFF5BE /* PedigreeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedigreeListTableViewCell.swift; sourceTree = "<group>"; };
+		829736C0207407600026C50F /* PedigreeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedigreeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				8204B3402073105E00AFF5BE /* PedigreeListTableViewController.swift */,
+				8204B3422073107D00AFF5BE /* PedigreeTableViewController.swift */,
+				8204B3442073109500AFF5BE /* IndividualViewController.swift */,
 				8204B32620730D6300AFF5BE /* AppDelegate.swift */,
 				8204B32820730D6300AFF5BE /* ViewController.swift */,
 				8204B33A20730DCD00AFF5BE /* IDType.swift */,
@@ -76,11 +80,10 @@
 				8204B33920730DCD00AFF5BE /* Person.swift */,
 				8204B32A20730D6300AFF5BE /* Main.storyboard */,
 				8204B3462073134500AFF5BE /* PedigreeListTableViewCell.swift */,
+				829736C0207407600026C50F /* PedigreeTableViewCell.swift */,
 				8204B32D20730D6300AFF5BE /* Assets.xcassets */,
 				8204B32F20730D6300AFF5BE /* LaunchScreen.storyboard */,
 				8204B33220730D6300AFF5BE /* Info.plist */,
-				8204B3422073107D00AFF5BE /* PedigreeTableViewController.swift */,
-				8204B3442073109500AFF5BE /* IndividualViewController.swift */,
 			);
 			path = HW8;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				8204B32920730D6300AFF5BE /* ViewController.swift in Sources */,
 				8204B33C20730DCD00AFF5BE /* Person.swift in Sources */,
 				8204B32720730D6300AFF5BE /* AppDelegate.swift in Sources */,
+				829736C1207407600026C50F /* PedigreeTableViewCell.swift in Sources */,
 				8204B3432073107D00AFF5BE /* PedigreeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
