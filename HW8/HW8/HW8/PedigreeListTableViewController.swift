@@ -45,7 +45,7 @@ class PedigreeListTableViewController: UITableViewController {
         }
         
         let pedigree = pedigrees[indexPath.row]
-        cell.probandLabel.text = pedigree.getPerson(individualID: pedigree.probandID)!.lastName
+        cell.probandLabel.text = "The " + pedigree.getPerson(individualID: pedigree.probandID)!.lastName + " family"
 
         return cell
     }

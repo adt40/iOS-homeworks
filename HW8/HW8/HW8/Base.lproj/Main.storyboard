@@ -97,7 +97,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="m8F-U8-hrO">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ncv-ok-rfW"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ncv-ok-rfW">
+                            <connections>
+                                <segue destination="WMq-Ad-m6Q" kind="show" identifier="NewSelected" id="bKz-Rz-SJE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="navBar" destination="m8F-U8-hrO" id="ejB-Kj-PFM"/>
@@ -211,7 +215,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="JSZ-MK-diP"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Editor" id="eBM-NU-rw5"/>
+                    <navigationItem key="navigationItem" title="Editor" id="eBM-NU-rw5">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="dBN-tW-fiX">
+                            <connections>
+                                <segue destination="giW-6Q-MVF" kind="unwind" unwindAction="customUnwind:" id="ifF-86-BS4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="affectedSwitch" destination="4mP-5S-eqC" id="EAv-4p-wZe"/>
                         <outlet property="fatherIDText" destination="Rzh-Tb-GP3" id="nRj-8c-MML"/>
@@ -222,6 +232,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rly-8w-enn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="giW-6Q-MVF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3004" y="212.74362818590706"/>
         </scene>
@@ -244,4 +255,7 @@
             <point key="canvasLocation" x="353" y="214"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="bKz-Rz-SJE"/>
+    </inferredMetricsTieBreakers>
 </document>

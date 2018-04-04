@@ -23,6 +23,7 @@ class IndividualViewController: UIViewController {
     var fatherID : Int?
     var gender : Int?
     var affected : Int?
+    var row : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()

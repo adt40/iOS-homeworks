@@ -106,13 +106,76 @@ class PedigreeTableViewController: UITableViewController {
                 let dvc = segue.destination as! IndividualViewController
                 
                 if let indexPath = self.tableView.indexPathForSelectedRow {
-                    //Add stuff here for segue to individualViewController
+                    let person = pedigree.family[indexPath.row]
+                    dvc.firstName = person.firstName
+                    dvc.lastName = person.lastName
+                    dvc.motherID = person.mother
+                    dvc.fatherID = person.father
+                    dvc.gender = person.gender
+                    dvc.affected = person.affected
+                    dvc.row = indexPath.row
                 }
+            case "NewSelected":
+                let dvc = segue.destination as! IndividualViewController
+                dvc.firstName = ""
+                dvc.lastName = ""
+                dvc.motherID = 0
+                dvc.fatherID = 0
+                dvc.gender = 1
+                dvc.affected = 0
+                //don't set row so it can be tested for in the unwind
                 
             default: break
             }
         }
     }
     
-
+    @IBAction func customUnwind( _ unwindSegue: UIStoryboardSegue) {
+        if let dvc = unwindSegue.source as? IndividualViewController {
+            if let row = dvc.row {
+                //if row was set, the editing screen was used to edit an existing family member
+                
+                pedigree.family[row].firstName = dvc.firstNameText.text!
+                pedigree.family[row].lastName = dvc.lastNameText.text!
+                guard let motherID = Int(dvc.motherIDText.text!) else {
+                    fatalError("invalid mother ID")
+                }
+                pedigree.family[row].mother = motherID
+                
+                guard let fatherID = Int(dvc.motherIDText.text!) else {
+                    fatalError("invalid father ID")
+                }
+                pedigree.family[row].father = fatherID
+                
+                pedigree.family[row].gender = dvc.genderSwitch.isOn ? 2 : 1
+                pedigree.family[row].affected = dvc.affectedSwitch.isOn ? 1 : 0
+            } else {
+                //if row was not set, the editing screen was used to add a new family member
+                guard let firstName = dvc.firstNameText.text else {
+                    fatalError("No first name")
+                }
+                
+                guard let lastName = dvc.lastNameText.text else {
+                    fatalError("No last name")
+                }
+                
+                var fatherID = 0
+                if let fid = Int(dvc.fatherIDText.text!) {
+                    fatherID = fid
+                }
+                
+                var motherID = 0
+                if let mid = Int(dvc.motherIDText.text!) {
+                    motherID = mid
+                }
+                
+                let gender = dvc.genderSwitch.isOn ? 2 : 1
+                let affected = dvc.affectedSwitch.isOn ? 1 : 0
+                
+                let person = Person(familyID: pedigree.family[0].family, individualID: pedigree.family.count, fatherID: fatherID, motherID: motherID, genderID: gender, affectedStatus: affected, firstName: firstName, lastName: lastName)
+                pedigree.family.append(person)
+            }
+            self.tableView.reloadData()
+        }
+    }
 }
